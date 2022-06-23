@@ -1,0 +1,38 @@
+﻿@model CosmosApp.Models.Planet
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<br />
+<h2 class="text-info text-center">Delete this Record?</h2>
+<br />
+
+<div class="container">
+    <div class="border container" style="padding:20px;">
+        <style type="text/css">
+            .container {
+                width: 70%;
+            }
+            </style>
+        <dl class="table text-center p-2 text-dark">
+            <dt class="p-2" style="font-size: 21px">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="p-2" style="font-size: 21px">
+                @Html.DisplayNameFor(model => model.Distance)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Distance)
+            </dd>
+        </dl>
+        <form asp-action="Delete" class="p-4 text-center">
+            <input type="hidden" asp-for="ID" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a class="btn btn-success" asp-action="Index">Back</a>
+        </form>
+    </div>
+</div>

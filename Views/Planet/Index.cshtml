@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CosmosApp.Models.Planet>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container row p-0 m-0 align-items-center">
+    <div class="col-10">
+        <h1 class="display-4 text-info">Planets</h1>
+    </div>
+    <div class="col-2">
+        <a asp-action="Create" class="btn btn-info form-control text-white">Add Planet</a>
+    </div>
+</div>
+
+<div class="col-12 border border-info p-3 mt-3">
+    <table class="table border text-dark text-center">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Distance)
+                </th>
+                <th class="font-weight-bold">
+                    Make Changes
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Distance)
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger btn-sm">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-success btn-sm">Modify</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

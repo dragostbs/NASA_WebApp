@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Earth";
+}
+
+<div>
+    <h1 class="display-4 text-info">Earth</h1>
+    <hr class="bg-info" />
+</div>
+<div class="input">
+    <div class="form-inline justify-content-around">
+        <input class="inputLongitude form-control" type="text" placeholder="Longitude" />
+        <input class="inputLatitude form-control" type="text" placeholder="Latitude" />
+        <input class="inputDistance form-control" type="text" placeholder="Dimension °" />
+        <input class="inputDate form-control" type="text" placeholder="YY-MM-DD" />
+        <button type="button" class="search btn btn-info" onclick="getData()">Search</button>
+    </div>
+</div>
+<br/>
+<div class="pixelImg text-center"></div>
+
+<script src="~/js/Earth.js"></script>
